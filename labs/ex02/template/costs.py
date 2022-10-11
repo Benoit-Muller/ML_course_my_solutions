@@ -11,14 +11,10 @@ def compute_loss(y, tx, w):
 
     Args:
         y: shape=(N, )
-        tx: shape=(N,2)
-        w: shape=(2,). The vector of model parameters.
+        tx: shape=(N,D)
+        w: shape=(D,). The vector of model parameters.
 
     Returns:
         the value of the loss (a scalar), corresponding to the input parameters w.
     """
-    # ***************************************************
-    # INSERT YOUR CODE HERE
-    # TODO: compute loss by MSE
-    # ***************************************************
-    raise NotImplementedError
+    return np.sum((y-tx@w)**2)/(2*len(y))
