@@ -28,6 +28,6 @@ def ridge_regression(y, tx, lambda_):
     # ridge regression: TODO
     # ***************************************************
     N,D = np.shape(tx)
-    w = np.linalg.lstsq(tx.T@tx + lambda_*(2*N)*np.eye(D), tx.T@y,rcond=None)[0]
+    w = np.linalg.lstsq(tx.T@tx + lambda_*(2*N)*np.eye(D), tx.T@y,rcond=-1)[0]
     return w
 
