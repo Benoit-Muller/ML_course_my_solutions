@@ -28,6 +28,6 @@ def least_squares(y, tx):
     # least squares: TODO
     # returns optimal weights, MSE
     # ***************************************************
-    w = np.linalg.solve(tx.T@tx, tx.T@y)
+    w = np.linalg.lstsq(tx.T@tx, tx.T@y,rcond=-1)[0]
     lse = compute_loss(y,tx,w)
     return w, lse
